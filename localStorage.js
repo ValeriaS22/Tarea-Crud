@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     document.querySelector(".btn-descargarPedidos").addEventListener("click", () => {
         let pedidos = JSON.parse(localStorage.getItem("Pedidos")) || [];
-        if (!pedidos.length) return alert("No hay pedidos para descargar.");
+        if (!pedidos.length) return alert("No hay pedidos para descargar");
         
         let doc = new jsPDF();
         pedidos.forEach((p, i) => doc.text(`${i + 1}. ${p.cliente} - ${p.producto} - $${p.precio}`, 10, 10 + i * 10));
